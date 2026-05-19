@@ -301,6 +301,15 @@ For large-scale deployments:
 4. **CDN**: Serve static files through CDN
 5. **Load Balancing**: Use load balancer with multiple app instances
 
+## Contact
+
+Got questions or need help? Feel free to reach out!
+
+📧 **Email**: chethu.yadav.cs@gmail.com  
+📱 **Phone**: +91 7026496890
+
+Happy to help with setup, implementation, or any issues you run into. Don't hesitate to get in touch.
+
 ## License
 
 This project is licensed under the MIT License - see LICENSE file for details.
