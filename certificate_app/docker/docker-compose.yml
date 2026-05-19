@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:8000"
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: mysql+mysqlconnector://root:rootpassword@db:3306/certificate_sender
+      SECRET_KEY: dev-secret-key-change-in-production
+      MAIL_SERVER: smtp.gmail.com
+      MAIL_PORT: 587
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+    volumes:
+      - ..:/app
+      - app_logs:/app/logs
+      - app_uploads:/app/app/static/uploads
+    depends_on:
+      - db
+    networks:
+      - app_network
+    command: flask run --host=0.0.0.0
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: certificate_sender
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
+  app_logs:
+  app_uploads:
+
+networks:
+  app_network:
+    driver: bridge

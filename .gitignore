@@ -1,0 +1,52 @@
+# Root level .gitignore - ignore old/unwanted files
+
+# Old application files (moved to certificate_app/)
+/app.py
+/models.py
+/config.py
+/run_app.py
+/check_settings.py
+/create_sample_excel.py
+/migrate_db.py
+/test_connectivity.py
+/test_db.py
+
+# Old directories
+/instance/
+/venv_new/
+/static/
+/templates/
+/old_requirements.txt
+
+# Old environment
+/.flaskenv
+
+# Sample/test data
+*.xlsx
+~$*.xlsx
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.Python
+build/
+dist/
+
+# Backups
+.snapshots/
+*.bak
+*.backup
+
+# Misc
+vvfgc.png
+archive/
