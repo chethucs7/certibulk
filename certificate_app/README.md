@@ -2,6 +2,26 @@
 
 A production-grade Flask application for managing and sending certificates to participants via email.
 
+## Project Description
+
+**Certibulk** is an enterprise-level certificate distribution and management platform designed to automate the process of creating, managing, and distributing digital certificates to large numbers of participants. Built with Flask and MySQL, the application provides a comprehensive solution for organizations needing to efficiently handle certificate workflows at scale.
+
+The application streamlines the entire certificate lifecycle—from participant data import to automated email delivery with digital attachments. Organizations can upload participant lists via Excel files, generate customized certificates, and automatically distribute them to recipients with personalized emails. The system maintains a complete audit trail of all activities, including delivery status, failed attempts, and communication logs.
+
+**Key Capabilities:**
+- **Bulk Processing**: Handle thousands of participants efficiently through Excel-based data import and batch certificate distribution
+- **Email Integration**: Seamless SMTP configuration with retry mechanisms, attachment handling, and delivery tracking
+- **Multi-Environment Support**: Separate configurations for development, staging, and production environments with environment-specific database and email settings
+- **RESTful API**: Complete REST API for programmatic access to certificate operations, participant management, and delivery status
+- **Audit & Logging**: Comprehensive logging system tracking all operations, email sends, and failures with detailed timestamps
+- **Role-Based Access**: Authentication system for managing user permissions and controlling access to sensitive operations
+- **Data Validation**: Built-in validation for participant data, email addresses, and file uploads to prevent data integrity issues
+- **Error Handling**: Robust error handling with user-friendly error messages, retry logic, and detailed debugging information
+
+**Technical Stack:** Flask web framework, SQLAlchemy ORM, MySQL database, Jinja2 templating, RESTful API design patterns, Docker containerization support, comprehensive test coverage.
+
+**Use Cases:** Academic institutions distributing course completion certificates, corporate training programs issuing professional credentials, event organizers sending attendance certificates, certification bodies distributing skill-based digital credentials.
+
 ## Features
 
 - ✅ Participant management (upload via Excel)
